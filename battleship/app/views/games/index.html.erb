@@ -1,0 +1,16 @@
+<div class="login">
+  <% if need_more_players? %>  
+    <%= render :partial => '/players/create_players' %>
+  <% else %>
+    <div class="game_button">
+      <p>Welcome Player <%="#{@player.id}"%>!</p>
+      <%= form_tag games_path do %>
+        <%= submit_tag "Load Game!"%>
+      <% end %>
+  <%end %>
+    </div>
+</div>
+
+
+
+

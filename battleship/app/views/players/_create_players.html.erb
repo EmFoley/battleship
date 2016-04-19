@@ -1,0 +1,9 @@
+<div class="create_players">
+  <% if session[:player] %>
+  <p>Waiting for one more player to sign in!</p>
+<% else %>
+  <%= form_for(@player) do |f| %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+</div>
