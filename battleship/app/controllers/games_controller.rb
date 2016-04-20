@@ -1,3 +1,6 @@
+require 'battleship_game'
+require 'byebug'
+
 class GamesController < ApplicationController
   helper_method :game_loaded?, :need_more_players?
   
@@ -20,9 +23,19 @@ class GamesController < ApplicationController
     end
   end
 
+  # def start_game
+  #   board = @game.boards.create(player: @player)
+
+  #   5.times do 
+  #     @board.ships.create_randomly
+  #   end
+  # end
+
   def play_game
     @game = Game.find(1)
     @player = Player.find(session[:player])
+    @board = @player.boards.last
+    @battleship_game = BattleshipGame.new(ships: @board.ships, hits: @board.hits).board
   end
 
 
