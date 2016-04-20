@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416202201) do
+ActiveRecord::Schema.define(version: 20160420021607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: true do |t|
-    t.integer "num_ships_left", default: 5, null: false
     t.integer "game_id"
     t.integer "player_id"
   end
@@ -26,13 +25,22 @@ ActiveRecord::Schema.define(version: 20160416202201) do
     t.string "winner"
   end
 
+  create_table "hits", force: true do |t|
+    t.integer "board_id"
+    t.integer "player_id"
+    t.integer "row_index"
+    t.integer "col_index"
+  end
+
   create_table "players", force: true do |t|
     t.integer "game_id"
   end
 
   create_table "ships", force: true do |t|
-    t.integer "num_hits_taken", default: 0, null: false
-    t.integer "length",         default: 3, null: false
+    t.integer "start_row_index"
+    t.integer "end_row_index"
+    t.integer "start_col_index"
+    t.integer "end_col_index"
     t.integer "board_id"
   end
 

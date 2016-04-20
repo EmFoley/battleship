@@ -1,3 +1,5 @@
+require 'active_gameboard'
+
 class GamesController < ApplicationController
   helper_method :game_loaded?, :need_more_players?
   
@@ -20,9 +22,12 @@ class GamesController < ApplicationController
     end
   end
 
+
   def play_game
     @game = Game.find(1)
     @player = Player.find(session[:player])
+    @board = @player.boards.last
+    @active_gameboard = ActiveGameboard.new(ships: @board.ships, hits: @board.hits).board
   end
 
 
