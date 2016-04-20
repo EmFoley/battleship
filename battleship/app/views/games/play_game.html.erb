@@ -1,8 +1,8 @@
 <table class="game_board">
-<% @battleship_game.each_with_index do |row, rindex|%>
-<tr class="row_<%= rindex %>">
- <% row.each_with_index do |val, cindex| %>
- <td class="col_<%= cindex %>"><%= val %></td>
+<% @active_gameboard.each_with_index do |row, index|%>
+<tr class="row_<%= index %>">
+ <% row.each_with_index do |val, index| %>
+ <td class="col_<%= index %>"><%= val %></td>
  <% end %>
 </tr>
 <% end %>

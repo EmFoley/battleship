@@ -1,4 +1,5 @@
-class BattleshipGame
+require 'matrix'
+class ActiveGameboard
   attr_reader :board
   def initialize(ships:, hits:)
     @board = Matrix.build(10,10) {0}.to_a
@@ -8,7 +9,6 @@ class BattleshipGame
     place_hits
   end
 
-  # def put ships on the board based on coordinates
   def place_ships
     @ships.map(&:coordinates).flatten(1).each do |row, col|
       @board[row][col] = "s"

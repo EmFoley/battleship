@@ -15,21 +15,4 @@ class Game < ActiveRecord::Base
 
 
 
-
- # def launch_missile(board:)
- #   row = rand(0..9)
- #   column = rand(0..9)
- #   target = board.board[row][column]
- # end
-
- # def hit?(target)
- #  if Ship.exists?(target) && !Ship.sunk?
- #    board[row][column] = "X"
- #    Ship.find(target).num_hits_taken +=1
- #  else
- #    false
- #  end
- # end
-
-
 end
