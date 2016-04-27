@@ -20,4 +20,5 @@ class ActiveGameboard
       @board[shot.row_index][shot.col_index] = "X"
     end
   end
+
 end

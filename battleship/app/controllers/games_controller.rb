@@ -33,12 +33,6 @@ class GamesController < ApplicationController
   def update_game
   end
 
-  # def take_shot
-  #   # @player = Player.find(session[:player])
-  #   # @board = 
-    
-  # end
-
 
   def game_loaded?
     Game.exists?(1)
