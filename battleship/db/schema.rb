@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 20160420021607) do
     t.string "winner"
   end
 
-  create_table "hits", force: true do |t|
-    t.integer "board_id"
-    t.integer "player_id"
-    t.integer "row_index"
-    t.integer "col_index"
-  end
-
   create_table "players", force: true do |t|
     t.integer "game_id"
   end
@@ -42,6 +35,13 @@ ActiveRecord::Schema.define(version: 20160420021607) do
     t.integer "start_col_index"
     t.integer "end_col_index"
     t.integer "board_id"
+  end
+
+  create_table "shots", force: true do |t|
+    t.integer "board_id"
+    t.integer "player_id"
+    t.integer "row_index"
+    t.integer "col_index"
   end
 
 end

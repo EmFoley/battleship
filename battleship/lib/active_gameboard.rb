@@ -1,12 +1,12 @@
 require 'matrix'
 class ActiveGameboard
   attr_reader :board
-  def initialize(ships:, hits:)
+  def initialize(ships:, shots:)
     @board = Matrix.build(10,10) {0}.to_a
     @ships = ships
-    @hits = hits
+    @shots = shots
     place_ships
-    place_hits
+    place_shots
   end
 
   def place_ships
@@ -15,9 +15,9 @@ class ActiveGameboard
     end
   end
 
-  def place_hits
-    @hits.each do |hit|
-      @board[hit.row_index][hit.col_index] = "X"
+  def place_shots
+    @shots.each do |shot|
+      @board[shot.row_index][shot.col_index] = "X"
     end
   end
 end

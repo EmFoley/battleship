@@ -1,6 +1,6 @@
-class CreateHits < ActiveRecord::Migration
+class CreateShots < ActiveRecord::Migration
   def change
-    create_table :hits do |t|
+    create_table :shots do |t|
       t.belongs_to :board
       t.belongs_to :player
       t.integer :row_index

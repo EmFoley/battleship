@@ -7,9 +7,12 @@ Rails.application.routes.draw do
 
   get 'play_game' => 'games#play_game'
 
+  post 'take_shot' => 'shots#take_shot'
+
   resources :players, only: [:create]
 
   resources :games, only: [:index, :create]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
