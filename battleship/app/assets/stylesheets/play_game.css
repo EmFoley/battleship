@@ -10,7 +10,8 @@ table tr td {
   height: 40px;
 }
 
-.fire_missile {
+.fire-missile {
+  border: 1px solid #000000;
   font-family: 'Impact';
   position: relative;
   left: 41%;
