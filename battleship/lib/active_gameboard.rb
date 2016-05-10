@@ -5,7 +5,6 @@ class ActiveGameboard
     # @board = Matrix.build(10,10) {0}.to_a
     @ships = ships
     # @shots = shots
-    ship_locations
   end
 
   def call

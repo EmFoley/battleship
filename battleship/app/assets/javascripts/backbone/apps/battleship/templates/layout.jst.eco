@@ -1,5 +1,2 @@
 <h3>Some Shit</h3>
 
-<% @shipCoordinates.each do |ship|%>
-  <%= ship.ship_id %>
-<% end %>
