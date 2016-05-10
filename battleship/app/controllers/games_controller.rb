@@ -27,7 +27,7 @@ class GamesController < ApplicationController
     @game = Game.find(1)
     @player = Player.find(session[:player])
     @board = @player.boards.last
-    @active_gameboard = ActiveGameboard.new(ships: @board.ships, shots: @board.shots).board
+    @active_gameboard = ActiveGameboard.new(ships: @board.ships).call
   end
 
   def update_game

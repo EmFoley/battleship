@@ -8,3 +8,15 @@
 <% end %>
 </table>
 <button class="fire-missile" rel="fire-missile">Fire Missile!</button>
+
+<div class="main"></div>
+
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    jQuery(function($){
+      Battleship.start({
+       coordinates: <%= raw @active_gameboard.to_json %>
+      });
+    });
+  <% end %>
+<% end %>

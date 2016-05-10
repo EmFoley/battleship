@@ -29,3 +29,6 @@ gem 'factory_girl_rails'
 gem 'capybara'
 gem 'database_cleaner'
 
+gem 'rails-backbone'
+gem 'marionette-rails'
+
