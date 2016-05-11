@@ -2,7 +2,7 @@
 
 Battleship.Views.Layout ?= {}
 
-class Battleship.Views.Layout extends Backbone.Marionette.Layout
+class Battleship.Views.Layout extends Backbone.Marionette.LayoutView
   template: 'apps/battleship/templates/layout'
 
   regions:
@@ -10,4 +10,10 @@ class Battleship.Views.Layout extends Backbone.Marionette.Layout
     'scoreboard': '.scoreboard'
 
   initialize: (options) ->
-    @shipCoordinates = options.shipCoordinates
+    debugger
+    @gameboardView = new Battleship.Views.Gameboard 
+      shipCoordinates: options.shipCoordinates
+
+  onShow: ->
+    @gameboard.show @gameboardView
+

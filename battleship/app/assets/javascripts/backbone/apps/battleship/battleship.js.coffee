@@ -1,12 +1,15 @@
 #= require application
-#= require_self
-#= require_tree ./templates
-#= require_tree ./models
-#= require_tree ./views
-#= require_tree ./routers
+#= require apps/battleship/views/layout
 
-window.Battleship =
-  Models: {}
-  Collections: {}
-  Routers: {}
-  Views: {}
+Battleship ?= {}
+
+Battleship = new Backbone.Marionette.Application()
+
+Battleship.addRegions
+  main: 'main'
+
+Battleship.addInitializer (options) ->
+  debugger
+  layout = new Battleship.Views.Layout(options)
+    shipCoordinates: options.coordinates
+  @main.show(layout)
