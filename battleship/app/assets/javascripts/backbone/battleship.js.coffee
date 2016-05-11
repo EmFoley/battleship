@@ -1,7 +1,5 @@
-#= require application
-#= require apps/battleship/views/layout
-
-Battleship ?= {}
+#= require_self
+#= require backbone/views/layout
 
 Battleship = new Backbone.Marionette.Application()
 
@@ -9,7 +7,6 @@ Battleship.addRegions
   main: 'main'
 
 Battleship.addInitializer (options) ->
-  debugger
   layout = new Battleship.Views.Layout(options)
     shipCoordinates: options.coordinates
   @main.show(layout)

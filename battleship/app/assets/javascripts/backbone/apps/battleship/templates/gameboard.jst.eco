@@ -1,3 +1,0 @@
-<% @shipCoordinates.each do |ship|%>
-  <%= ship.ship_id %>
-<% end %>

@@ -1,13 +1,7 @@
-<!-- <table class="game_board">
-<% @active_gameboard.each_with_index do |row, index|%>
-<tr class="row_<%= index %>">
- <% row.each_with_index do |val, index| %>
- <td class="col_<%= index %>"><%= val %></td>
- <% end %>
-</tr>
-<% end %>
-</table> -->
-<% @js_manifest = "apps/battleship/battleship" %>
+<% 
+  @page_css = "game"
+  @js_manifest = "backbone/battleship" 
+%>
 <button class="fire-missile" rel="fire-missile">Fire Missile!</button>
 
 <div class="main"></div>

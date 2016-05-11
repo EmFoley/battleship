@@ -1,9 +1,10 @@
-#= require apps/battleship/templates/layout
+#= require backbone/templates/layout
+#= require backbone/views/gameboard
 
-Battleship.Views.Layout ?= {}
+# Battleship.Views.Layout ?= {}
 
 class Battleship.Views.Layout extends Backbone.Marionette.LayoutView
-  template: 'apps/battleship/templates/layout'
+  template: JST['backbone/templates/layout']
 
   regions:
     'gameboard':  '.gameboard'
